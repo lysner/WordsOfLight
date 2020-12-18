@@ -1,0 +1,25 @@
+
+<IntroWindow1>:
+    name: "intro"
+    MDCard:
+        size_hint: None, None
+        size: "320dp", "570dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+    MDLabel:
+        text: "Make Devotions"
+        size_hint_x: .8
+        halign: "center"
+        font_style: "H3"
+        pos_hint: {"center_x": .5, "center_y": .6}
+    MDLabel:
+        text: "Make your devotions from our daily bible verses"
+        halign: "center"
+        size_hint_x: .4
+        font_style: "Subtitle2"
+        theme_text_color: "Hint"
+        pos_hint: {"center_x": .5, "center_y": .4}
+    MDRaisedButton:
+        text: "Next"
+        pos_hint: {"center_x": .832, "center_y": .15}
+        on_press: root.manager.current = "intro2"
+        width: 200

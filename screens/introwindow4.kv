@@ -1,0 +1,31 @@
+
+<IntroWindow4>:
+    name: "intro4"
+    Screen:
+        MDCard:
+            size_hint: None, None
+            size: "320dp", "570dp"
+            pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDLabel:
+            text: "Create Account"
+            size_hint_x: .8
+            halign: "center"
+            font_style: "H3"
+            pos_hint: {"center_x": .5, "center_y": .7}
+        MDLabel:
+            text: "Register and Login so that they may find you as a friend"
+            halign: "center"
+            size_hint_x: .4
+            font_style: "Subtitle2"
+            theme_text_color: "Hint"
+            pos_hint: {"center_x": .5, "center_y": .46}
+        MDRaisedButton:
+            text: "Login / Sign Up"
+            pos_hint: {"center_x": .5, "center_y": .3}
+            on_press: root.manager.current = "login"
+        MDRaisedButton:
+            text: "Guest"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            on_press: root.manager.current = "main"
+            md_bg_color: 0, 1, 0, 1

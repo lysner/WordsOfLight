@@ -1,0 +1,24 @@
+
+<IntroWindow2>:
+    name: "intro2"
+    MDCard:
+        size_hint: None, None
+        size: "320dp", "570dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+    MDLabel:
+        text: "Make Group Chats"
+        size_hint_x: .8
+        halign: "center"
+        font_style: "H3"
+        pos_hint: {"center_x": .5, "center_y": .6}
+    MDLabel:
+        text: "Make friends and share your devotionals to them"
+        halign: "center"
+        size_hint_x: .45
+        font_style: "Subtitle2"
+        theme_text_color: "Hint"
+        pos_hint: {"center_x": .5, "center_y": .4}
+    MDRaisedButton:
+        text: "Next"
+        pos_hint: {"center_x": .832, "center_y": .15}
+        on_press: root.manager.current = "intro3"

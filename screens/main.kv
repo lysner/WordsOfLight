@@ -1,0 +1,101 @@
+
+<MainWindow>:
+    NavigationLayout:
+        id: nav_layout
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: "vertical"
+                    MDToolbar:
+                        id: md_toolbar
+                        title: app.title
+                        elevation: 10
+                        left_action_items: [["menu", lambda x: nav_drawer.set_state()]]
+
+                    ScreenManager:
+                        id: screen_manager
+                        Devotions:
+                            id: devotions
+                            name: "screen2"
+                        Profile:
+                            id: profile
+                            name: "screen1"
+                        Community:
+                            id: community
+                            name: "screen3"
+                        Bookmark:
+                            id: bookmarks
+                            name: "screen4"
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            BoxLayout:
+                orientation: "vertical"
+                padding: "8dp"
+                spacing: "8dp"
+
+                Image:
+                    size_hint: None, None
+                    size: "56dp", "56dp"
+                    source: "assets/Account-Icon.png"
+
+                MDLabel:
+                    text: " Username"
+                    font_style: "Button"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    halign: "left"
+
+                MDLabel:
+                    text: " Email"
+                    font_style: "Caption"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    halign: "left"
+
+                MDSeparator:
+                    padding: "4dp"
+
+                ScrollView:
+
+                    MDList:
+
+                        OneLineIconListItem:
+                            text: "Profile"
+                            on_press:
+                                screen_manager.current = "screen1"
+                                nav_drawer.set_state()
+                            IconLeftWidget:
+                                icon: "account-circle"
+
+                        OneLineIconListItem:
+                            text: "Devotions"
+                            on_press:
+                                screen_manager.current = "screen2"
+                                nav_drawer.set_state()
+                            IconLeftWidget:
+                                icon: "format-list-bulleted"
+
+                        OneLineIconListItem:
+                            text: "Community"
+                            on_press:
+                                screen_manager.current = "screen3"
+                                nav_drawer.set_state()
+                            IconLeftWidget:
+                                icon: "account-group"
+
+                        OneLineIconListItem:
+                            text: "Bookmarks"
+                            on_press:
+                                screen_manager.current = "screen4"
+                                nav_drawer.set_state()
+                            IconLeftWidget:
+                                icon: "bookmark-multiple"
+
+                        OneLineIconListItem:
+                            text: "Settings"
+                            on_press:
+                                print("Settings is here!")
+                            IconLeftWidget:
+                                icon: "tune"

@@ -1,0 +1,78 @@
+
+<RegisterWindow>:
+    name: "register"
+    MDCard:
+        size_hint: None, None
+        size: "320dp", "570dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+    MDLabel:
+        text: "Register"
+        halign: "center"
+        font_style: "H3"
+        theme_text_color: "Primary"
+        pos_hint: {"center_x": .5, "center_y": .8}
+
+    MDTextField:
+        hint_text: "Name"
+        required: True
+        helper_text: "enter your name"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .67}
+        icon_right: "account"
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDTextField:
+        hint_text: "Surname"
+        required: True
+        helper_text: "enter your surname"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .57}
+        icon_right: "account"
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDTextField:
+        hint_text: "Email"
+        required: True
+        helper_text: "enter your email"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .47}
+        icon_right: "at"
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDTextField:
+        hint_text: "Password"
+        required: True
+        helper_text: "password max length must be 15"
+        helper_text_mode: "on_focus"
+        max_text_length: 15
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .37}
+        icon_right: "lock"
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDRaisedButton:
+        text: "Register"
+        md_bg_color: 1, 0, 1, 1
+        pos_hint: {"center_x": .5, "center_y": .27}
+        on_press: root.manager.current = "login"
+
+    MDLabel:
+        text: "Already have an account?, click the login button below"
+        size_hint_x: 0.8
+        valign: "bottom"
+        font_style: "Subtitle2"
+        theme_text_color: "Secondary"
+        pos_hint: {"center_x": .54, "center_y": .17}
+
+    MDFlatButton:
+        text: "[color=#00ffcc]Login[/color]"
+        markup: True
+        pos_hint: {"center_x": .5, "center_y": .09}
+        on_press: root.manager.current = "login"

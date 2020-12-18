@@ -1,0 +1,54 @@
+
+<LoginWindow>:
+    name: "login"
+    MDCard:
+        size_hint: None, None
+        size: "320dp", "570dp"
+        pos_hint: {"center_x": .5, "center_y": .5}
+    MDLabel:
+        text: "Login"
+        halign: "center"
+        font_style: "H3"
+        theme_text_color: "Primary"
+        pos_hint: {"center_x": .5, "center_y": .75}
+
+    MDTextField:
+        hint_text: "Email"
+        helper_text: "enter email"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .55}
+        icon_right: "account"
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDTextField:
+        hint_text: "Password"
+        helper_text: "enter password"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        pos_hint: {"center_x": .5, "center_y": .45}
+        # icon_left: "lock"
+        icon_right: 'eye-off'
+        icon_right_color: app.theme_cls.primary_color
+        width: 250
+
+    MDRaisedButton:
+        text: "Login"
+        md_bg_color: 1, 0, 1, 1
+        pos_hint: {"center_x": .5, "center_y": .35}
+        on_press: root.manager.current = "main"
+
+    MDLabel:
+        text: "If you don't have an account yet, click the register button below"
+        size_hint_x: 0.8
+        valign: "bottom"
+        font_style: "Subtitle2"
+        theme_text_color: "Secondary"
+        pos_hint: {"center_x": .54, "center_y": .25}
+
+    MDFlatButton:
+        text: "[color=#00ffcc]Register[/color]"
+        markup: True
+        pos_hint: {"center_x": .5, "center_y": .17}
+        on_press: root.manager.current = "register"

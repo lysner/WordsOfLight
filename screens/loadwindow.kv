@@ -1,0 +1,13 @@
+
+<LoadWindow>:
+    name: "load"
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "assets/App-Logo.png"
+    MDRaisedButton:
+        text: "Next"
+        pos_hint: {"center_x": .832, "center_y": .15}
+        on_press: root.manager.current = "intro"
+        width: 200
